@@ -15,6 +15,7 @@ public class StrategyFactory {
     static {
         //初始化各个定义对应的parser
         beanDefinitionParserMap.putIfAbsent("bean",new CommonBeanDefinitionParser());
+        beanDefinitionParserMap.putIfAbsent("component-scan",new ComponentScanBeanDefinitionParser());
     }
 
     /**
