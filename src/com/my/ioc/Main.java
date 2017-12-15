@@ -10,6 +10,9 @@ public class Main {
         User user = (User)context.getBean("user");
         System.out.println(user.toString());
 
+        MyUserService userService = (MyUserService)context.getBean("myUserService");
+        userService.print();
+
         IocServlet servlet = new IocServlet();
         servlet.init(null);
         user = (User)BeanUtils.getBean("user");
