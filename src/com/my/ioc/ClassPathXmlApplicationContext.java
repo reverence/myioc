@@ -96,7 +96,7 @@ public class ClassPathXmlApplicationContext extends AbastractApplicationContext{
             }
         }
 
-        return null;
+        return cls.newInstance();
     }
 
     private Method getMethod(Class cls,String name){
