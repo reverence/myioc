@@ -57,7 +57,7 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
         }
         String dirPath = path+"\\"+basePackage;
         List<String> classes = new ArrayList<String>();
-        getFiles(path,classes);
+        getFiles(dirPath,classes);
         for(String s : classes){
             s = s.replace(path+"\\","");
             s = s.replace("\\",".");
