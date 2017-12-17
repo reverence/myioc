@@ -3,8 +3,6 @@ package com.my.ioc;
 import org.dom4j.Element;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -50,8 +48,9 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
         basePackage = basePackage.replace(".","\\");
         String path = System.getProperty("java.class.path");
         String[] paths = path.split(";");
+        String currentDir = System.getProperty("user.dir");
         for(String s : paths){
-            if(!s.endsWith(".jar")){//只有一个目录
+            if(!s.endsWith(".jar") && s.contains(currentDir)){//只有一个目录
                 path = s;
                 break;
             }
